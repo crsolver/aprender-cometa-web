@@ -1,0 +1,96 @@
+---
+const caracteristicas = [
+	{
+		simbolo: '🎮',
+		color: 'var(--estrella)',
+		titulo: 'Aprendes con juegos',
+		texto: 'Cada ejercicio es un juego de verdad al que le falta un pedazo. Lo completas y lo juegas en una ventana.',
+	},
+	{
+		simbolo: '✓',
+		color: 'var(--turquesa)',
+		titulo: 'Pruebas que te guían',
+		texto: 'Pulsa Probar y unas pruebas ocultas te dicen qué falla, sin darte la respuesta.',
+	},
+	{
+		simbolo: '💡',
+		color: 'var(--hielo)',
+		titulo: 'Pistas por niveles',
+		texto: 'Si te atascas, pide una pista: van de una idea suave a un empujón más claro.',
+	},
+	{
+		simbolo: '⌨',
+		color: 'var(--pervinca)',
+		titulo: 'Editor integrado',
+		texto: 'Escribes en un editor con resaltado y autocompletado, junto a las instrucciones y el resultado esperado.',
+	},
+	{
+		simbolo: '⇩',
+		color: 'var(--celeste)',
+		titulo: 'Local y sin conexión',
+		texto: 'Todo corre en tu computadora: el compilador, los cursos y el editor. No necesitas internet ni cuenta.',
+	},
+	{
+		simbolo: '💾',
+		color: 'var(--lavanda)',
+		titulo: 'Tu progreso es tuyo',
+		texto: 'Tu avance y tu código se guardan en tu equipo, y se conservan cuando actualizas la plataforma.',
+	},
+];
+---
+
+<section id="caracteristicas" class="seccion">
+	<div class="contenedor">
+		<div class="encabezado">
+			<span class="etiqueta">// por qué aprender aquí</span>
+			<h2>Practica de verdad.<br /><span class="resaltado">Sin tutoriales eternos.</span></h2>
+			<p>
+				Leer ayuda, pero programar se aprende programando. Cada lección te pone a escribir código que se
+				ve funcionar.
+			</p>
+		</div>
+
+		<ul class="rejilla">
+			{
+				caracteristicas.map((c) => (
+					<li class="tarjeta">
+						<span class="simbolo" style={`--c:${c.color}`}>
+							{c.simbolo}
+						</span>
+						<h3>{c.titulo}</h3>
+						<p>{c.texto}</p>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</section>
+
+<style>
+	.rejilla {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+		gap: 1.2rem;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	.simbolo {
+		display: grid;
+		place-items: center;
+		width: 3.2rem;
+		height: 3.2rem;
+		border-radius: 14px;
+		margin-bottom: 1.2rem;
+		font-family: var(--fuente-codigo);
+		font-weight: 600;
+		font-size: 1.3rem;
+		color: var(--c);
+		background: color-mix(in srgb, var(--c) 14%, transparent);
+		border: 1px solid color-mix(in srgb, var(--c) 40%, transparent);
+	}
+	.tarjeta p {
+		color: var(--tinta-suave);
+		margin: 0;
+	}
+</style>

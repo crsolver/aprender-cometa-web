@@ -1,0 +1,59 @@
+---
+const preguntas = [
+	{ p: '¿Necesito saber programar?', r: 'No. El curso «desde cero» empieza explicando qué es un programa y qué es una variable.' },
+	{ p: '¿Necesito internet?', r: 'No. La plataforma, el compilador y el editor funcionan sin conexión, y no pide cuenta ni registro.' },
+	{ p: '¿Dónde se guarda mi progreso?', r: 'En tu computadora, en la carpeta de configuración de tu usuario. Al actualizar la plataforma no lo pierdes.' },
+	{ p: '¿En qué sistemas funciona?', r: 'Por ahora la descarga es para Windows.' },
+	{ p: '¿Es seguro lo que ejecuto?', r: 'La plataforma compila y ejecuta código en tu equipo, y solo acepta peticiones de su propia página. Solo abre cursos oficiales, firmados por el autor.' },
+	{ p: '¿Cómo compro un curso de pago?', r: 'Desde la plataforma: el curso muestra un mensaje ya escrito para enviar al autor por WhatsApp o correo. Después de pagar, el curso se desbloquea en tu equipo. La licencia sirve en un solo equipo.' },
+];
+---
+
+<section id="preguntas" class="seccion">
+	<div class="contenedor">
+		<div class="encabezado">
+			<span class="etiqueta">// preguntas</span>
+			<h2>Antes de <span class="resaltado">empezar.</span></h2>
+		</div>
+		<div class="lista">
+			{
+				preguntas.map((q) => (
+					<details class="tarjeta">
+						<summary>{q.p}</summary>
+						<p>{q.r}</p>
+					</details>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<style>
+	.lista {
+		display: grid;
+		gap: 0.8rem;
+		max-width: 48rem;
+	}
+	.tarjeta {
+		padding: 1rem 1.4rem;
+	}
+	.tarjeta:hover {
+		transform: none;
+	}
+	summary {
+		cursor: pointer;
+		font-weight: 600;
+		list-style: none;
+	}
+	summary::-webkit-details-marker {
+		display: none;
+	}
+	summary::before {
+		content: '✦ ';
+		color: var(--hielo);
+	}
+	p {
+		color: var(--tinta-suave);
+		margin: 0.8rem 0 0;
+	}
+</style>

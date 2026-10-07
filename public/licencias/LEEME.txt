@@ -1,0 +1,5 @@
+Licencias publicadas de Cometa · aprender.
+
+Cada carpeta es un equipo y cada archivo, una licencia para ese equipo.
+Las escribe «licencias emitir --web»: no se editan a mano. Un archivo de
+aquí no sirve en ningún otro equipo, por eso puede ser público.

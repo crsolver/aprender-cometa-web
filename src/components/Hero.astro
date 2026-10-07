@@ -1,0 +1,179 @@
+---
+import { url } from '../lib/sitio';
+
+const estrellas = Array.from({ length: 28 }, (_, i) => ({
+	x: (i * 37.3) % 100,
+	y: (i * 53.7) % 100,
+	t: 1 + (i % 3),
+	d: (i % 7) * 0.6,
+}));
+---
+
+<section class="hero">
+	<div class="cielo" aria-hidden="true">
+		{estrellas.map((e) => <i style={`left:${e.x}%;top:${e.y}%;width:${e.t}px;height:${e.t}px;animation-delay:${e.d}s`}></i>)}
+	</div>
+
+	<div class="contenedor hero-interior">
+		<div class="hero-texto">
+			<span class="insignia"><b>Gratis</b> Funciona sin conexión ✨</span>
+			<h1>Aprende a programar <span class="resaltado">arreglando juegos.</span></h1>
+			<p class="bajada">
+				Cometa · aprender es una plataforma para tu computadora. Cada lección es un juego que casi funciona:
+				escribe el código que le falta, pasa las pruebas y juega tu propia versión.
+			</p>
+			<div class="acciones">
+				<a class="boton boton-principal" href="#descargar">Descargar <span aria-hidden="true">→</span></a>
+				<a class="boton boton-secundario" href="#como-funciona">Cómo funciona</a>
+			</div>
+			<ul class="datos">
+				<li><strong>Sin</strong> instalar nada más</li>
+				<li><strong>Todo</strong> en español</li>
+				<li><strong>Tu progreso</strong> se queda contigo</li>
+			</ul>
+		</div>
+
+		<figure class="captura">
+			<div class="marco">
+				<div class="barra" aria-hidden="true"><i></i><i></i><i></i><span>127.0.0.1:4321</span></div>
+				<img
+					src={url('/captura-leccion.jpg')}
+					width="1568"
+					height="731"
+					alt="La lección «El calabozo»: instrucciones y capturas del juego a la izquierda, editor de código a la derecha."
+				/>
+			</div>
+		</figure>
+	</div>
+</section>
+
+<style>
+	.hero {
+		position: relative;
+		overflow: hidden;
+		padding-block: clamp(3rem, 8vw, 5.5rem) clamp(4rem, 9vw, 6rem);
+	}
+	.cielo {
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+	}
+	.cielo i {
+		position: absolute;
+		border-radius: 50%;
+		background: #fff;
+		opacity: 0.5;
+		animation: titilar 3.5s ease-in-out infinite;
+	}
+	@keyframes titilar {
+		50% {
+			opacity: 0.1;
+		}
+	}
+	.hero-interior {
+		position: relative;
+		display: grid;
+		gap: clamp(2.5rem, 5vw, 4rem);
+	}
+	.hero-texto {
+		max-width: 46rem;
+	}
+	.insignia {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.6rem;
+		padding: 0.3rem 0.9rem 0.3rem 0.35rem;
+		border-radius: 999px;
+		border: 1px solid var(--linea);
+		background: rgb(255 255 255 / 0.03);
+		font-size: 0.9rem;
+		color: var(--tinta-suave);
+		margin-bottom: 1.5rem;
+	}
+	.insignia b {
+		background: var(--turquesa);
+		color: #0b1424;
+		border-radius: 999px;
+		padding: 0.1rem 0.6rem;
+		font-size: 0.78rem;
+	}
+	h1 {
+		font-size: clamp(2.6rem, 6.5vw, 4.8rem);
+		font-weight: 800;
+		letter-spacing: -0.03em;
+		margin-bottom: 1.4rem;
+	}
+	.bajada {
+		font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+		color: var(--tinta-suave);
+		max-width: 38rem;
+		margin-bottom: 2rem;
+	}
+	.acciones {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.8rem;
+		margin-bottom: 2.4rem;
+	}
+	.datos {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.6rem 1.6rem;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		color: var(--tinta-suave);
+		font-size: 0.95rem;
+	}
+	.datos li::before {
+		content: '✦ ';
+		color: var(--hielo);
+	}
+	.datos strong {
+		color: var(--tinta);
+	}
+	.captura {
+		position: relative;
+		margin: 0;
+	}
+	.captura::before {
+		content: '';
+		position: absolute;
+		inset: 10% 5% -8% 5%;
+		background: radial-gradient(closest-side, rgb(94 177 199 / 0.35), transparent);
+		filter: blur(40px);
+		z-index: -1;
+	}
+	.marco {
+		border-radius: var(--radio);
+		overflow: hidden;
+		border: 1px solid var(--linea);
+		background: #1b1c36;
+		box-shadow: var(--brillo), 0 30px 60px -20px rgb(0 0 0 / 0.7);
+	}
+	.barra {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+		padding: 0.6rem 0.9rem;
+		background: var(--noche-2);
+		border-bottom: 1px solid var(--linea);
+	}
+	.barra i {
+		width: 0.7rem;
+		height: 0.7rem;
+		border-radius: 50%;
+		background: var(--indigo);
+	}
+	.barra span {
+		margin-left: 0.8rem;
+		font-family: var(--fuente-codigo);
+		font-size: 0.75rem;
+		color: var(--tinta-suave);
+	}
+	.marco img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+</style>

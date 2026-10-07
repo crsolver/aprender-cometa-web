@@ -1,0 +1,93 @@
+---
+import { DESCARGA, COMETA_WEB } from '../lib/sitio';
+
+const pasos = [
+	'Descarga el archivo .zip y descomprímelo donde quieras.',
+	'Abre aprender.exe: se abre una página en tu navegador.',
+	'Elige un curso y empieza. No necesitas instalar nada más.',
+];
+---
+
+<section id="descargar" class="seccion">
+	<div class="contenedor">
+		<div class="cta">
+			<span class="etiqueta">// descargar</span>
+			<h2>Despega en <span class="resaltado">un minuto.</span></h2>
+			<p class="texto">
+				Un solo archivo trae la plataforma, el compilador de Cometa y el curso básico. Por ahora está
+				disponible para Windows.
+			</p>
+			<div class="cta-acciones">
+				{
+					DESCARGA ? (
+						<a class="boton boton-principal" href={DESCARGA}>Descargar para Windows <span aria-hidden="true">→</span></a>
+					) : (
+						<span class="boton boton-principal deshabilitado" aria-disabled="true">Descarga próximamente</span>
+					)
+				}
+				<a class="boton boton-secundario" href={COMETA_WEB}>Conocer el lenguaje</a>
+			</div>
+			<ol class="pasos">
+				{pasos.map((p) => <li>{p}</li>)}
+			</ol>
+		</div>
+	</div>
+</section>
+
+<style>
+	.cta {
+		padding: clamp(2rem, 5vw, 3.5rem);
+		border-radius: calc(var(--radio) + 6px);
+		text-align: center;
+		background:
+			radial-gradient(500px 200px at 50% 0%, rgb(94 177 199 / 0.25), transparent 70%),
+			var(--noche-2);
+		border: 1px solid var(--linea);
+	}
+	.texto {
+		max-width: 36rem;
+		margin: 0 auto 1.8rem;
+		color: var(--tinta-suave);
+		font-size: 1.1rem;
+	}
+	.cta-acciones {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.8rem;
+		margin-bottom: 2.4rem;
+	}
+	.deshabilitado {
+		opacity: 0.55;
+		cursor: not-allowed;
+	}
+	.deshabilitado:hover {
+		transform: none;
+	}
+	.pasos {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+		gap: 1rem;
+		text-align: left;
+		list-style: none;
+		counter-reset: p;
+		padding: 0;
+		margin: 0 auto;
+		max-width: 52rem;
+		color: var(--tinta-suave);
+		font-size: 0.95rem;
+	}
+	.pasos li {
+		counter-increment: p;
+		padding: 0.9rem 1rem;
+		border-radius: 14px;
+		background: #1b1c36;
+		border: 1px solid var(--linea);
+	}
+	.pasos li::before {
+		content: counter(p) '. ';
+		font-family: var(--fuente-codigo);
+		font-weight: 700;
+		color: var(--turquesa);
+	}
+</style>

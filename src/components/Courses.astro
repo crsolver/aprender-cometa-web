@@ -1,0 +1,90 @@
+---
+// `precio` es opcional: «Gratis» o el precio del curso. Se muestra junto al nivel.
+const cursos: { titulo: string; texto: string; datos: string[]; nivel: string; precio?: string }[] = [
+	{
+		titulo: 'Lo básico de Cometa',
+		texto: 'Funciones, condiciones, listas y ciclos, arreglando un calabozo que no funciona del todo.',
+		datos: ['8 lecciones', '3 extras'],
+		nivel: 'Ya programas un poco',
+	},
+	{
+		titulo: 'Lo básico de Cometa (desde cero)',
+		texto: 'Aprende a programar sin saber nada antes: variables, tipos, funciones, decisiones, ciclos y listas, hasta terminar un juego.',
+		datos: ['26 lecciones'],
+		nivel: 'Empiezas de cero',
+	},
+];
+---
+
+<section id="cursos" class="seccion">
+	<div class="contenedor">
+		<div class="encabezado">
+			<span class="etiqueta">// cursos</span>
+			<h2>Elige por <span class="resaltado">dónde empezar.</span></h2>
+			<p>
+				El curso básico es gratis y viene con la plataforma. Los demás cursos oficiales se instalan
+				desde la propia plataforma: los de pago traen lecciones gratis para probarlos y se
+				desbloquean con una licencia para tu equipo.
+			</p>
+		</div>
+
+		<ul class="cursos">
+			{
+				cursos.map((c) => (
+					<li class="tarjeta curso">
+						<span class="nivel">{c.nivel}{c.precio ? ` · ${c.precio}` : ''}</span>
+						<h3>{c.titulo}</h3>
+						<p>{c.texto}</p>
+						<ul class="datos">
+							{c.datos.map((d) => <li>{d}</li>)}
+						</ul>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</section>
+
+<style>
+	.cursos {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+		gap: 1.2rem;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.curso {
+		display: flex;
+		flex-direction: column;
+	}
+	.curso p {
+		color: var(--tinta-suave);
+		flex: 1;
+	}
+	.nivel {
+		align-self: flex-start;
+		font-family: var(--fuente-codigo);
+		font-size: 0.75rem;
+		font-weight: 600;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: var(--turquesa);
+		margin-bottom: 0.8rem;
+	}
+	.datos {
+		display: flex;
+		gap: 0.5rem;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.datos li {
+		font-size: 0.85rem;
+		padding: 0.2rem 0.75rem;
+		border-radius: 999px;
+		border: 1px solid var(--linea);
+		background: rgb(255 255 255 / 0.04);
+		color: var(--tinta-suave);
+	}
+</style>

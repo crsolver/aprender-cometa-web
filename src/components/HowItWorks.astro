@@ -1,0 +1,57 @@
+---
+const pasos = [
+	{ titulo: 'Lee el reto', texto: 'Ves cómo empieza el juego y cómo debe quedar, con una explicación breve de lo que necesitas saber.' },
+	{ titulo: 'Escribe el código', texto: 'Completas las funciones que faltan en solucion.cometa. Si te atascas, pides una pista.' },
+	{ titulo: 'Prueba y juega', texto: 'Las pruebas dicen si va bien. Cuando pasan, pulsas Jugar y juegas el juego que arreglaste tú.' },
+];
+---
+
+<section id="como-funciona" class="seccion">
+	<div class="contenedor">
+		<div class="encabezado">
+			<span class="etiqueta">// cómo funciona</span>
+			<h2>Un ciclo <span class="resaltado">corto y adictivo.</span></h2>
+			<p>Lección tras lección repites tres pasos, y cada vez el reto crece un poco.</p>
+		</div>
+
+		<ol class="pasos">
+			{
+				pasos.map((p, i) => (
+					<li class="tarjeta paso">
+						<span class="numero">{i + 1}</span>
+						<h3>{p.titulo}</h3>
+						<p>{p.texto}</p>
+					</li>
+				))
+			}
+		</ol>
+	</div>
+</section>
+
+<style>
+	.pasos {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+		gap: 1.2rem;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.paso p {
+		color: var(--tinta-suave);
+		margin: 0;
+	}
+	.numero {
+		display: grid;
+		place-items: center;
+		width: 2.6rem;
+		height: 2.6rem;
+		border-radius: 50%;
+		margin-bottom: 1rem;
+		font-family: var(--fuente-titulo);
+		font-weight: 800;
+		font-size: 1.3rem;
+		color: #0b1424;
+		background: var(--degradado);
+	}
+</style>

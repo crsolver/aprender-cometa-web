@@ -27,12 +27,13 @@
 		{
 			"id": "99-prueba",
 			"titulo": "Prueba de actualización (no instalar)",
-			"resumen": "Edición 1. Curso de prueba para revisar cómo llegan las actualizaciones. Se quitará del catálogo.",
-			"version": 1,
+			"resumen": "Edición 2. Curso de prueba para revisar cómo llegan las actualizaciones. Se quitará del catálogo.",
+			"version": 2,
 			"formato": 1,
 			"cometa": "0.1.1",
-			"url": "99-prueba-1.zip",
-			"sha256": "552ea94919b1ce40936b057d831613cc0823c243431710e6e5b49de53629c281"
+			"url": "99-prueba-2.zip",
+			"sha256": "56d24826478f7637f680b40d9c906707984fa31b5a6022f339c6d981bacb7aa3",
+			"notas": "Edición 2 de la prueba."
 		}
 	]
 }

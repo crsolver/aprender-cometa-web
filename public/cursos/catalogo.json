@@ -23,6 +23,16 @@
 			"url": "02-mapas-1.zip",
 			"sha256": "8bee20123e6d35ee74710bdaaa9d9ff572e62bc9e1d8b7d88e8a600b4485bc91",
 			"de_pago": true
+		},
+		{
+			"id": "99-prueba",
+			"titulo": "Prueba de actualización (no instalar)",
+			"resumen": "Edición 1. Curso de prueba para revisar cómo llegan las actualizaciones. Se quitará del catálogo.",
+			"version": 1,
+			"formato": 1,
+			"cometa": "0.1.1",
+			"url": "99-prueba-1.zip",
+			"sha256": "552ea94919b1ce40936b057d831613cc0823c243431710e6e5b49de53629c281"
 		}
 	]
 }

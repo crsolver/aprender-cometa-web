@@ -1,5 +1,5 @@
 {
-	"aprender": { "version": "v0.1.2", "url": "https://github.com/crsolver/cometa/releases/download/v0.1.1/cometa-aprender_v0.1.1_windows_amd64.zip", "notas": "Prueba del aviso de versión nueva." },
+	"aprender": { "version": "v0.1.1", "url": "https://github.com/crsolver/cometa/releases/download/v0.1.1/cometa-aprender_v0.1.1_windows_amd64.zip", "notas": "" },
 	"contacto": { "whatsapp": "", "correo": "crsolver@proton.me" },
 	"licencia": { "precio": "₡8.500" },
 	"cursos": [
@@ -23,17 +23,6 @@
 			"url": "02-mapas-1.zip",
 			"sha256": "8bee20123e6d35ee74710bdaaa9d9ff572e62bc9e1d8b7d88e8a600b4485bc91",
 			"de_pago": true
-		},
-		{
-			"id": "99-prueba",
-			"titulo": "Prueba de actualización (no instalar)",
-			"resumen": "Edición 3. El curso rehecho, con lecciones distintas en carpetas que ya existían. Se quitará del catálogo.",
-			"version": 3,
-			"formato": 1,
-			"cometa": "0.1.1",
-			"url": "99-prueba-3.zip",
-			"sha256": "005f5b1620aaa44d92e29b5d8ea56d6fb07adcdc4ad97635a559d49733d36abc",
-			"notas": "Edición 3 de la prueba: el curso rehecho."
 		}
 	]
 }

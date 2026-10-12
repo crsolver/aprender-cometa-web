@@ -1,5 +1,28 @@
 {
-	"aprender": { "version": "", "url": "", "notas": "" },
+	"aprender": { "version": "v0.1.1", "url": "https://github.com/crsolver/cometa/releases/download/v0.1.1/cometa-aprender_v0.1.1_windows_amd64.zip", "notas": "" },
 	"contacto": { "whatsapp": "", "correo": "crsolver@proton.me" },
-	"cursos": []
+	"licencia": { "precio": "₡8.500" },
+	"cursos": [
+		{
+			"id": "01-desde-cero",
+			"titulo": "Aprende Cometa desde cero",
+			"resumen": "Un curso para aprender a programar sin conocimientos previos. Avanza desde las variables y las funciones hasta los ciclos, las listas y tus propios tipos, y termina con un juego.",
+			"version": 1,
+			"formato": 1,
+			"cometa": "0.1.1",
+			"url": "01-desde-cero-1.zip",
+			"sha256": "2ba45eeb52926b85ae0194f0468d5af8ad4d95985d60ce35ff8bad862a36f3fd"
+		},
+		{
+			"id": "02-mapas",
+			"titulo": "Mapas",
+			"resumen": "Guarda cada dato junto a un nombre para encontrarlo después, y úsalo para llevar los precios y las cuentas de una tienda.",
+			"version": 1,
+			"formato": 1,
+			"cometa": "0.1.1",
+			"url": "02-mapas-1.zip",
+			"sha256": "8bee20123e6d35ee74710bdaaa9d9ff572e62bc9e1d8b7d88e8a600b4485bc91",
+			"de_pago": true
+		}
+	]
 }

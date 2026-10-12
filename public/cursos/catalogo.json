@@ -1,5 +1,5 @@
 {
-	"aprender": { "version": "v0.1.1", "url": "https://github.com/crsolver/cometa/releases/download/v0.1.1/cometa-aprender_v0.1.1_windows_amd64.zip", "notas": "" },
+	"aprender": { "version": "v0.1.2", "url": "https://github.com/crsolver/cometa/releases/download/v0.1.1/cometa-aprender_v0.1.1_windows_amd64.zip", "notas": "Prueba del aviso de versión nueva." },
 	"contacto": { "whatsapp": "", "correo": "crsolver@proton.me" },
 	"licencia": { "precio": "₡8.500" },
 	"cursos": [
